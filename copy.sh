@@ -1,3 +1,4 @@
 #!/bin/bash
-cp ~/.zshrc $(pwd)
-cp -r ~/.macros $(pwd)
+cp ~/.zshrc .
+cp -r ~/.macros .
+cp ~/.config/starship.toml ./.config/starship.toml
