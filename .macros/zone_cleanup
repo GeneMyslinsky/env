@@ -1,0 +1,16 @@
+#!/bin/bash
+rm /tmp/zone_files
+
+fd :Zone.Identifier /home/gene > /tmp/zone_files
+bat /tmp/zone_files
+echo "delete those files? (y/n)"
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+  while IFS= read -r line
+    do
+      echo "$line"
+    done < "/tmp/zone_files" 
+else
+  echo No
+fi

@@ -17,7 +17,7 @@ style = "bright-blue"
 [conda]
 disabled = false
 ignore_base = false
-style	= "bold purple"
+style	= "bright-purple"
 format = "[$symbol$environment]($style) "
 symbol = "🅒"
 [character]

@@ -1,0 +1,28 @@
+function t_tm_mfa_profile() {
+  if [[ "$1" =~ ^python3\ main\.py\ profile\ ([[:alnum:]-]+)$ ]]; then
+    # Extract the profile name from the command
+    arg="${match[1]}"
+    # echo "$arg"
+    # Run your command here
+    python3 main.py profile "$arg"
+    eval $(python3 main.py profile "$arg" -s)
+  fi
+}
+
+
+function tm_mfa_profile() {
+  if [[ "$1" =~ ^tm-mfa\ profile\ ([[:alnum:]-]+)$ ]]; then
+    # Extract the profile name from the command
+    arg="${match[1]}"
+    # echo "$arg"
+    # Run your command here
+    tm-mfa profile "$arg"
+    eval $(tm-mfa profile "$arg" -s)
+  fi
+}
+
+# Set the trap to run before each command
+TRAPDEBUG() {
+  tm_mfa_profile "$ZSH_DEBUG_CMD"
+  t_tm_mfa_profile "$ZSH_DEBUG_CMD"
+}
